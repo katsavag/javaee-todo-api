@@ -1,17 +1,20 @@
 package com.katsadourose.todo.api.ejb.dao;
 
+import com.katsadourose.todo.api.ejb.dto.PageDto;
 import com.katsadourose.todo.api.ejb.entity.TodoItem;
-import jakarta.ejb.Stateless;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 
-@Stateless
+@ApplicationScoped
+@Transactional(Transactional.TxType.SUPPORTS)
 public class TodoItemDao {
 
     @PersistenceContext

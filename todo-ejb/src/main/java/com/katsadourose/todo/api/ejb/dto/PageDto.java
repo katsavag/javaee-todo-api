@@ -1,4 +1,4 @@
-package com.katsadourose.todo.api.ejb.dao;
+package com.katsadourose.todo.api.ejb.dto;
 
 
 import lombok.AllArgsConstructor;

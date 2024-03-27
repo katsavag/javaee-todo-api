@@ -5,8 +5,11 @@ import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "CATEGORIES")
+@NamedQuery(name = Category.FIND_ALL, query = "select c from Category c")
 public class Category {
+
+    public static final String FIND_ALL = "Category.findAll";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
