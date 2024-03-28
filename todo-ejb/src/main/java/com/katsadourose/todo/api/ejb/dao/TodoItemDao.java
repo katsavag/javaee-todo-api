@@ -22,6 +22,12 @@ public class TodoItemDao {
 
     private final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 
+    public TodoItem saveTodoItem(TodoItem todoItem) {
+        entityManager.persist(todoItem);
+
+        return todoItem;
+    }
+
     protected TodoItem findById(long id) {
 
         return entityManager.find(TodoItem.class, id);

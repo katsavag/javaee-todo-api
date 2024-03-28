@@ -14,13 +14,12 @@ public class CategoryDao {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<Category> findALLCategories() {
-        TypedQuery<Category> categoryQuery = entityManager.createNamedQuery(Category.FIND_ALL, Category.class);
-        return categoryQuery.getResultList();
-    }
-
     public void persistCategory(Category category) {
         entityManager.persist(category);
     }
 
+    public List<Category> findALLCategories() {
+        TypedQuery<Category> categoryQuery = entityManager.createNamedQuery(Category.FIND_ALL, Category.class);
+        return categoryQuery.getResultList();
+    }
 }
